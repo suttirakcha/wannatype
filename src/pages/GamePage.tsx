@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
 import { WORDS } from "../data"
 import { ArrowLeft, Heart } from "lucide-react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import NoHearts from "../components/NoHearts"
 
 const GamePage = () => {
 
+  const navigate = useNavigate()
   const [word, setWord] = useState<string>(WORDS[Math.floor(Math.random() * WORDS.length)])
   const [limit, setLimit] = useState(Math.floor(Math.random() * 10) + 10)
   const [typedWords, setTypedWords] = useState(0)
+  const [animate, setAnimate] = useState('fade-in')
 
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
 
@@ -30,6 +32,13 @@ const GamePage = () => {
 
     setTypedWords(next => next + 1)
     setCurrentLetterIndex(0)
+  }
+
+  const goBack = () => {
+    setAnimate("fade-out")
+    setTimeout(() => {
+      navigate("/")
+    }, 800)
   }
 
   useEffect(() => {
@@ -84,14 +93,14 @@ const GamePage = () => {
   }
 
   return (
-    <main>
+    <main className={animate}>
       {heart > 0 ? (
         <>
           <header className="grid grid-cols-3 p-10 items-center">
-            <Link to="/" className="w-fit flex items-center gap-x-2 text-2xl">
+            <button onClick={goBack} className="w-fit flex items-center gap-x-2 text-2xl">
               <ArrowLeft />
               Back
-            </Link>
+            </button>
             <h1 className="text-4xl text-center w-full">{typedWords} / {limit}</h1>
             <HeartSystem />
           </header>

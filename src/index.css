@@ -17,3 +17,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.fade-in {
+  animation:fade-in 800ms forwards
+}
+
+.fade-out {
+  animation:fade-out 800ms forwards
+}
+
+.fade-in-slide {
+  animation:fade-in-page 800ms forwards
+}
+
+.fade-out-slide {
+  animation:fade-out-page 800ms forwards
+}
+
+@keyframes fade-in-page {
+  from {
+    opacity:0;
+    transform:translateY(-10px)
+  }
+  to {
+    opacity:1;
+    transform:translateY(0)
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1
+  }
+}
+
+@keyframes fade-out-page {
+  from {
+    opacity:1;
+    transform:translateY(0)
+  }
+  to {
+    opacity:0;
+    transform:translateY(-10px)
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0
+  }
+}
