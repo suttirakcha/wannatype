@@ -11,9 +11,9 @@ const Button = ({ text, onClick } : ButtonProps) => {
 
   useEffect(() => {
     const press = (e: KeyboardEvent) => {
-        if (e.key === firstLetter.toLowerCase()){
-            onClick()
-        }
+      if (e.shiftKey && e.key === firstLetter.toLowerCase()){
+        onClick()
+      }
     }
     window.addEventListener("keypress", press)
   }, [firstLetter, onClick])

@@ -16,11 +16,11 @@ const Home = () => {
 
   return (
     <main className={`flex flex-col gap-y-8 items-center justify-center h-screen ${animate}`}>
-      <h1 className="text-7xl">Wannatype</h1>
+      <h1 className="text-6xl sm:text-7xl font-bold">Wannatype</h1>
 
       <div className="flex flex-col gap-y-4">
         <Button text="Play now" onClick={() => linkToPage("/game")}/>
-        <Button text="How to play" onClick={() => console.log("HELLOTEST")}/>
+        <Button text="How to play" onClick={() => linkToPage("/how-to-play")}/>
       </div>
     </main>
   )

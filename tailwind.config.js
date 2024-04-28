@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       fontSize: {
         "7xl": "80px"
+      },
+      colors: {
+        maingray: "#303030"
       }
     },
   },
