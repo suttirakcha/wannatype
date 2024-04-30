@@ -4,6 +4,7 @@ import { ArrowLeft, Heart } from "lucide-react"
 import { Link, useNavigate } from "react-router-dom"
 import NoHearts from "../components/NoHearts"
 import InputButton from "../components/InputButton"
+import YouWon from "../components/YouWon"
 
 const GamePage = () => {
 
@@ -90,7 +91,7 @@ const GamePage = () => {
       {heart > 0 ? (
         <>
           {typedWords > limit ? (
-            <h1>YOU WON!</h1>
+            <YouWon />
           ) : (
             <>
               <header className="grid grid-cols-3 p-5 md:p-10 items-center">

@@ -19,7 +19,7 @@ const Button = ({ text, onClick } : ButtonProps) => {
   }, [firstLetter, onClick])
 
   return (
-    <button onClick={onClick} className="text-4xl">{text}</button>
+    <button onClick={onClick} className="text-4xl py-3 px-8 hover:bg-zinc-600 transition-all rounded-full">{text}</button>
   )
 }
 
