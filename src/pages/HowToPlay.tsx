@@ -38,9 +38,9 @@ const HowToPlay = () => {
         </button>
       </header>
       <main className={`flex flex-col gap-y-8 items-center justify-center h-screen max-w-[600px] mx-auto text-center ${animate.main}`}>
-        <h1 className="text-7xl">How to play</h1>
+        <h1 className="text-7xl font-bold">How to play</h1>
 
-        <p className="text-2xl">You will be given the words to type and you need to type the characters correctly. If you type them incorrectly, you will lose the hearts. To start typing, you can click the button below or press Enter.</p>
+        <p className="text-2xl">You will be given the words to type and you need to type the characters correctly. You can type incorrectly only four times or you have to start over. To start typing, you can click the button below or press Enter.</p>
         <InputButton onType={handleType}/>
 
         {typing && <p className="text-2xl">TYPING...</p>}
