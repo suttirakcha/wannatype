@@ -34,7 +34,7 @@ const InputButton = ({ onType } : InputButtonProps) => {
       className={`bg-maingray ${isFocused ? "placeholder:text-white" : ""} w-[300px] md:w-[360px] text-lg md:text-xl font-medium text-center border px-3 py-2 md:p-3 rounded-full`}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
-      value=""
+      value={""}
       onKeyDown={onType}
     />
   )
