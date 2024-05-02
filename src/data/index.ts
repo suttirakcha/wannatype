@@ -296,5 +296,18 @@ export const WORDS: string[] = [
   "rain",
   "smoke",
   "fire",
-  "water"
+  "water",
+  "translation",
+  "translate",
+  "jump",
+  "motivation",
+  "motivate",
+  "innovation",
+  "innovate",
+  "check",
+  "examine",
+  "investigate",
+  "shop",
+  "truck",
+  "document"
 ]
