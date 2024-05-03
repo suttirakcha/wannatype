@@ -309,5 +309,17 @@ export const WORDS: string[] = [
   "investigate",
   "shop",
   "truck",
-  "document"
+  "document",
+  "noodles",
+  "food",
+  "beef",
+  "pork",
+  "crocodile",
+  "ultimate",
+  "presentation",
+  "mental",
+  "physical",
+  "bell",
+  "mark",
+  "landmark"
 ]
