@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom"
 import NoHearts from "../components/NoHearts"
 import InputButton from "../components/InputButton"
 import YouWon from "../components/YouWon"
+import Timer from "../components/Timer"
+import TimesUp from "../components/TimesUp"
 
 const GamePage = () => {
 
@@ -13,6 +15,7 @@ const GamePage = () => {
   const [limit, setLimit] = useState(Math.floor(Math.random() * 10) + 10)
   const [typedWords, setTypedWords] = useState(0)
   const [animate, setAnimate] = useState('fade-in')
+  const [isTimeUp, setIsTimeUp] = useState(false)
 
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
 
@@ -92,17 +95,20 @@ const GamePage = () => {
         <>
           {typedWords > limit ? (
             <YouWon />
-          ) : (
+          ) : !isTimeUp ? (
             <>
-              <header className="grid grid-cols-3 p-5 md:p-10 items-center">
+              <header className="grid grid-cols-3 p-5 md:p-10 items-start">
                 <button onClick={goBack} className="w-fit flex items-center gap-x-2 md:text-2xl lg:text-3xl">
                   <ArrowLeft />
                   Back
                 </button>
-                <h1 className="text-3xl md:text-4xl font-medium text-center w-full">{typedWords} / {limit}</h1>
+                <div className="flex flex-col items-center gap-y-6">
+                  <h1 className="text-3xl md:text-4xl font-medium text-center w-full">{typedWords} / {limit}</h1>
+                  <Timer setIsTimeUp={setIsTimeUp}/>
+                </div>
                 <HeartSystem />
               </header>
-              <div className="flex flex-col items-center justify-center h-[60vh] gap-y-12 md:gap-y-20">
+              <div className="flex flex-col items-center justify-center h-[50vh] gap-y-12 md:gap-y-20">
                 <h1 className="text-5xl md:text-7xl uppercase font-medium">
                   {wordState.map(({ character, color }, index) => (
                     <span key={index} className={`${color} ${currentLetterIndex === index ? 'border-b' : ''}`}>
@@ -114,6 +120,8 @@ const GamePage = () => {
                 <InputButton onType={handleKeyPress}/>
               </div>
             </>
+          ) : (
+            <TimesUp />
           )}
         </>
       ) : (
