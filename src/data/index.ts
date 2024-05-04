@@ -321,5 +321,7 @@ export const WORDS: string[] = [
   "physical",
   "bell",
   "mark",
-  "landmark"
+  "landmark",
+  "favourite",
+  "rhythm"
 ]

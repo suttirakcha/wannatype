@@ -6,7 +6,7 @@ interface TimerProps {
 
 const Timer = ({ setIsTimeUp } : TimerProps) => {
 
-  const [time, setTime] = useState(30)
+  const [time, setTime] = useState(60)
 
   useEffect(() => {
     const countTime = setInterval(() => {
